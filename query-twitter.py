@@ -16,7 +16,7 @@ secrets = {
 }
 api = oauth(secrets)
 # api.update_status('Hello, world!')
-tweets = tweepy.Cursor(api.search, q='"desde que"', tweet_mode="extended").items()
+tweets = tweepy.Cursor(api.search, q='"desde que"', lang='es', tweet_mode="extended").items()
 with open("tweets.tsv", "w") as w:
     w.write("tweet_id\tdate\ttext\tuser_id\n")
     for tweet in tweets:
